@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Font Awesome-->
+    <!--Let browser know website is optimized for mobile-->
+    <link rel="stylesheet" href="styles/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ATU EMR</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="./index.html" class="brand-logo"><img width="175" src="./images/atu logo.png" alt=""></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="index.html">OPD</a></li>
+                <li><a href="doctor.html">Doctor</a></li>
+                <li><a href="laboratory.html">Laboratory</a></li>
+                <li><a href="lab_result.html">Laboratory Result</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="main-D">
+        <div class="container">
+            <h4 class="yellow-text center-align">
+                Personal Information
+            </h4>
+        </div>
+        <table class="highlight centered striped">
+            <thead>
+                <tr>
+                    <th>Patient ID</th>
+                    <th>Index Number</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Programme Level</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="container">
+            <h4 class="yellow-text center-align">
+                Contact Information
+            </h4>
+        </div>
+       <table class="highlight centered striped">
+        <thead>
+            <tr>
+                <th>Phone Number</th>
+                <th>Department</th>
+                <th>Date</th>
+            </tr>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </thead>
+       </table>
+        <div class="container">
+            <h4 class="yellow-text center-align">
+                Patient Vitals
+            </h4>
+        </div>
+       <table class="highlight centered striped">
+        <thead>
+            <tr>
+                <th>Temperature ^C</th>
+                <th>Weight</th>
+                <th>Blood Pressure</th>
+                <th>Height</th>
+            </tr>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </thead>
+       </table><br><br><br><br><br>
+        <div class="row">
+            <div class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                <i class="material-icons prefix">textsms</i>
+                <textarea class="materialize-textarea" name="" id="textarea1" cols="30" rows="10"></textarea>
+                <label for="textarea1">Doctor's Report</label>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col s6">
+                    <h5 class="yellow-text">
+                        Labaratory Test
+                    </h5>
+                    <div class="switch">
+                        <label>
+                          No
+                          <input type="checkbox" id="chkddl" onclick="Enableddl(this)">
+                          <span class="lever"></span>
+                          Yes
+                        </label>
+                    </div>
+                </div>
+                <div class="col s6">
+                    <div class="input-field">
+                        <select id="DDL" disabled="true">
+                            <option value="" selected Disabled>Select Lab</option>
+                            <option value="2">Malaria</option>
+                            <option value="1">Typhoid</option>
+                            <option value="2">Urine</option>
+                            <option value="2">Pregnancy</option>
+                            <option value="2">HB Full Blood Count</option>
+                            <option value="2">Cholestrol</option>
+                            <option value="2">Syphilis</option>
+                            <option value="2">Blood Grouping</option>
+                            <option value="2">Sikel Cell</option>
+                        </select>
+                        <label  for="">Laboratory Test</label>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </section>
+    
+    
+
+
+
+
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--Jquery at end of body for optimized loading-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        //input-field
+        document.addEventListener('DOMContentLoaded', function() {
+        var sel = document.querySelectorAll('select');
+        M.FormSelect.init(sel)
+        });
+        //switch-check-field activation
+        function Enableddl(chkddl)
+        {
+            console.log(chkddl)
+            var ddl = document.querySelector('DDL');
+            //var ddl=document.getElementById("DDL");
+            ddl.disabled=chkddl.checked ? false : true;
+            if(!ddl.disabled)
+            {
+                ddl.focus();
+            }
+        }
+    </script>
+</body>
+</html>
